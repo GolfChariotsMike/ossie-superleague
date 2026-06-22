@@ -8,8 +8,8 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      background: #1a1a1a;
-      color: #fff;
+      background: #e8eef6;
+      color: #0c2f69;
       font-family: 'Segoe UI', Arial, sans-serif;
       height: 100vh;
       overflow: hidden;
@@ -18,13 +18,14 @@
     }
 
     header {
-      background: #272727;
-      border-bottom: 4px solid #ff2a13;
+      background: #fff;
+      border-bottom: 4px solid #0c2f69;
       padding: 10px 28px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(12,47,105,0.12);
     }
 
     .header-left {
@@ -36,7 +37,7 @@
     }
 
     .header-logo {
-      height: 52px;
+      height: 58px;
       width: auto;
       object-fit: contain;
     }
@@ -49,16 +50,16 @@
     }
 
     .header-main {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       font-weight: 800;
       letter-spacing: 1px;
       line-height: 1.1;
-      color: #fff;
+      color: #0c2f69;
     }
 
     .header-sub {
       font-size: 0.7rem;
-      color: #fef200;
+      color: #e5351b;
       font-weight: 700;
       letter-spacing: 3px;
       text-transform: uppercase;
@@ -74,13 +75,13 @@
     .clock {
       font-size: 1.6rem;
       font-weight: 700;
-      color: #fef200;
+      color: #0c2f69;
       font-variant-numeric: tabular-nums;
     }
 
     .date-label {
       font-size: 0.65rem;
-      color: #556;
+      color: #7a90b0;
       letter-spacing: 1px;
       text-transform: uppercase;
     }
@@ -90,17 +91,20 @@
       flex: 1;
       display: flex;
       flex-direction: column;
-      gap: 3px;
-      background: #111;
+      gap: 4px;
+      background: #d0dcea;
       overflow: hidden;
+      padding: 4px;
     }
 
     .round-panel {
       display: flex;
       flex-direction: column;
-      background: #1c1c1c;
+      background: #fff;
       overflow: hidden;
       min-height: 0;
+      border-radius: 6px;
+      box-shadow: 0 1px 4px rgba(12,47,105,0.08);
     }
 
     .round-panel.is-current { flex-shrink: 0; height: 37vh; }
@@ -115,9 +119,9 @@
       flex-shrink: 0;
     }
 
-    .round-header.current  { background: #ff2a13; }
-    .round-header.next     { background: #2a2a2a; padding: 4px 12px; min-height: 0; border-left: 4px solid #fef200; }
-    .round-header.later    { background: #222; padding: 2px 12px; min-height: 0; border-left: 4px solid #444; }
+    .round-header.current  { background: #0c2f69; color: #fff; border-radius: 6px 6px 0 0; }
+    .round-header.next     { background: #1a4fa0; color: #fff; padding: 5px 14px; border-radius: 6px 6px 0 0; }
+    .round-header.later    { background: #3a6abf; color: #fff; padding: 3px 14px; border-radius: 6px 6px 0 0; }
 
     .round-label {
       font-size: 1rem;
@@ -147,7 +151,7 @@
       font-size: 0.8rem;
       opacity: 0.9;
       font-variant-numeric: tabular-nums;
-      background: rgba(0,0,0,0.3);
+      background: rgba(255,255,255,0.2);
       padding: 2px 8px;
       border-radius: 4px;
     }
@@ -176,10 +180,11 @@
       align-items: center;
       justify-content: center;
       padding: 4px 6px;
-      border-right: 1px solid #2a2a2a;
-      border-bottom: 1px solid #2a2a2a;
+      border-right: 1px solid #e0e8f2;
+      border-bottom: 1px solid #e0e8f2;
       text-align: center;
       gap: 3px;
+      background: #fff;
     }
 
     .court-cell:nth-child(4n)   { border-right: none; }
@@ -192,9 +197,10 @@
       justify-content: center;
       padding: 4px 6px;
       gap: 1px;
-      border-right: 1px solid #2a2a2a;
+      border-right: 1px solid #e0e8f2;
       border-bottom: none;
       min-width: 0;
+      background: #f5f8fd;
     }
 
     .court-cell.inline:last-child { border-right: none; }
@@ -210,24 +216,25 @@
 
     .court-tag {
       font-size: 0.6rem;
-      color: #aaa;
+      color: #7a90b0;
       font-weight: 700;
       letter-spacing: 1px;
       text-transform: uppercase;
     }
 
-    .court-cell.inline .court-tag { font-size: 0.5rem; color: #666; white-space: nowrap; }
+    .court-cell.inline .court-tag { font-size: 0.5rem; color: #9ab; white-space: nowrap; }
 
     .team-name {
       font-size: 0.88rem;
       font-weight: 800;
       line-height: 1.1;
       word-break: break-word;
+      color: #0c2f69;
     }
 
     .div-label {
       font-size: 0.55rem;
-      color: #556;
+      color: #7a90b0;
       font-weight: 600;
       letter-spacing: 1px;
     }
@@ -238,47 +245,16 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      color: #eee;
+      color: #0c2f69;
       width: 100%;
       text-align: center;
     }
 
     .vs-badge {
       font-size: 0.55rem;
-      color: #ff2a13;
+      color: #e5351b;
       font-weight: 700;
       letter-spacing: 2px;
-    }
-
-    /* Bye strip */
-    .bye-strip {
-      flex-shrink: 0;
-      background: #06061a;
-      border-top: 1px solid #1a1a33;
-      padding: 4px 20px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .bye-label {
-      font-size: 0.6rem;
-      color: #444;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      flex-shrink: 0;
-    }
-
-    .bye-team {
-      font-size: 0.6rem;
-      color: #444;
-      font-weight: 600;
-      background: #0f0f22;
-      border: 1px solid #1a1a33;
-      padding: 1px 7px;
-      border-radius: 3px;
     }
 
     .done-state {
@@ -286,7 +262,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #222;
+      color: #7a90b0;
       font-size: 1.2rem;
       font-weight: 700;
       letter-spacing: 2px;
@@ -299,14 +275,14 @@
       justify-content: center;
       flex-direction: column;
       gap: 12px;
-      color: #444;
+      color: #7a90b0;
     }
 
     .loading-spinner {
       width: 40px;
       height: 40px;
-      border: 3px solid #1a1a33;
-      border-top-color: #ff2a13;
+      border: 3px solid #d0dcea;
+      border-top-color: #0c2f69;
       border-radius: 50%;
       animation: spin 0.8s linear infinite;
     }
@@ -318,7 +294,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #ff2a13;
+      color: #e5351b;
       font-size: 0.9rem;
       font-weight: 700;
       letter-spacing: 1px;
@@ -609,7 +585,7 @@ function renderPanel(panelEl, roundIdx, role) {
       return `
         <div class="court-cell inline" style="border-bottom: 2px solid ${divColour}20">
           <div class="court-tag" style="color:${divColour}">C${courtNum}</div>
-          <div class="matchup">${teamA} <span style="color:#ff2a13;font-size:0.45rem">v</span> ${teamB}</div>
+          <div class="matchup">${teamA} <span style="color:#e5351b;font-size:0.45rem">v</span> ${teamB}</div>
         </div>
       `;
     }).join('');
