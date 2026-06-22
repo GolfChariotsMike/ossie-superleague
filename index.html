@@ -67,9 +67,7 @@
 
     .header-right {
       display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 2px;
+      align-items: center;
     }
 
     .clock {
@@ -225,7 +223,7 @@
     .court-cell.inline .court-tag { font-size: 0.5rem; color: #9ab; white-space: nowrap; }
 
     .team-name {
-      font-size: 0.88rem;
+      font-size: 1.05rem;
       font-weight: 800;
       line-height: 1.1;
       word-break: break-word;
@@ -309,11 +307,11 @@
     <div class="header-titles">
       <div class="header-main" id="pageTitle">2026 SUPERLEAGUE ROUND 3</div>
       <div class="header-sub" id="pageSubtitle">INDOOR BEACH VOLLEYBALL WA</div>
+      <div class="clock" id="clock" style="margin-top:4px">--:--:--</div>
     </div>
   </div>
   <div class="header-right">
-    <div class="clock" id="clock">--:--:--</div>
-    <div class="date-label" id="dateLabel">--</div>
+    <img class="header-logo" src="./logo.jpg" alt="IBV Logo" />
   </div>
 </header>
 
