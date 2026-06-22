@@ -446,25 +446,8 @@ async function loadFixtures() {
 
   if (allFixtures.length === 0) return false;
 
-  // Find the best target date:
-  // Priority 1: today (if fixtures exist for today)
-  // Priority 2: the next upcoming date in the data
-  const todayStr = getTodayStr();
-  const allDates = [...new Set(allFixtures.map(f => f.datePart))].sort((a, b) => {
-    // Sort DD/MM/YYYY properly
-    return parseDate(a) - parseDate(b);
-  });
-
-  let targetDate = null;
-  const now = Date.now();
-
-  // Find today's date if fixtures exist
-  if (allDates.includes(todayStr)) {
-    targetDate = todayStr;
-  } else {
-    // Find next upcoming date
-    targetDate = allDates.find(d => parseDate(d) >= now) || allDates[allDates.length - 1];
-  }
+  // Always show Saturday 27/06/2026 fixtures
+  const targetDate = '27/06/2026';
 
   const filtered = allFixtures.filter(f => f.datePart === targetDate);
   if (!filtered.length) return false;
