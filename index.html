@@ -435,7 +435,8 @@ async function loadFixtures() {
 
   // Update date display
   const dateObj = new Date(parseDate(targetDate));
-  document.getElementById('dateLabel').textContent = dateObj.toLocaleDateString('en-AU', {
+  const dateLabelEl = document.getElementById('dateLabel');
+  if (dateLabelEl) dateLabelEl.textContent = dateObj.toLocaleDateString('en-AU', {
     weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
   }).toUpperCase();
 
