@@ -608,13 +608,6 @@ function renderPanel(panelEl, roundIdx, role) {
     }).join('');
   }
 
-  const byeHtml = isCurrent && byes.length ? `
-    <div class="bye-strip">
-      <span class="bye-label">BYE</span>
-      ${byes.map(t => `<span class="bye-team">${t}</span>`).join('')}
-    </div>
-  ` : '';
-
   panelEl.innerHTML = `
     <div class="round-header ${headerClass}">
       <div class="round-label">${label}</div>
@@ -624,7 +617,6 @@ function renderPanel(panelEl, roundIdx, role) {
       </div>
     </div>
     <div class="${courtsClass}">${cells}</div>
-    ${byeHtml}
   `;
 }
 
